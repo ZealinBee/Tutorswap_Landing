@@ -1,42 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TutorSwap - Teach to Learn, Learn to Teach</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="./assets/logo_splash.png" type="image/x-icon">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="./assets/logo_splash.png" type="image/x-icon" />
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h1>TutorSwap</h1>
-            </div>
+      <div class="nav-container">
+        <div class="nav-logo">
+          <h1>TutorSwap</h1>
         </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#aboutapp" class="nav-link">About App</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
-    <main class="hero-section">
-        <div class="hero-container">
+    <main class="app-container">
+      <!-- Home Page -->
+      <section id="home-page" class="page active">
+        <div class="hero-section">
+          <div class="hero-container">
             <h1 class="hero-text">
-                Want to Learn <span id="animated-subject" class="animated-subject">Finnish</span>?
+              Want to Learn
+              <span id="animated-subject" class="animated-subject">Finnish</span
+              >?
             </h1>
-            <p class="hero-subtitle">Learn for Free Today.</p>
+            <p class="hero-subtitle">
+              Learn from a Real Person, For Free. Today.
+            </p>
             <p class="hero-description">
-                What's the catch? To learn, you gotta teach someone something, it could be anything. Your mother tongue, some instrument you play, or how to cook your favorite dish.
+              What's the catch? To learn, you gotta teach someone something, it
+              could be anything. Your mother tongue, some instrument you play,
+              or how you cook your favorite dish.
+              <a href="#aboutapp" class="learn-more-link">Learn more</a>
             </p>
             <div class="hero-cta-buttons">
-                <a href="https://play.google.com/store/apps/details?id=com.tutorswap.mvp" class="cta-button google-play">
-                    <img src="https://a.storyblok.com/f/336077/202x60/745c11ec64/play-store-cta.svg" alt="Get it on Google Play" />
-                </a>
-                <a href="#" class="cta-button app-store">
-                    <img src="https://a.storyblok.com/f/336077/202x60/2b723862ed/app-store-cta.svg" alt="Download on the App Store" />
-                </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tutorswap.mvp"
+                class="cta-button google-play"
+              >
+                <img
+                  src="https://a.storyblok.com/f/336077/202x60/745c11ec64/play-store-cta.svg"
+                  alt="Get it on Google Play"
+                />
+              </a>
+              <a href="#" class="cta-button app-store">
+                <img
+                  src="https://a.storyblok.com/f/336077/202x60/2b723862ed/app-store-cta.svg"
+                  alt="Download on the App Store"
+                />
+              </a>
             </div>
+          </div>
         </div>
+      </section>
+
+      <!-- About App Page -->
+      <section id="aboutapp-page" class="page">
+        <div class="about-app-section">
+          <div class="hero-container">
+            <div
+              class="about-content"
+              style="text-align: left; font-size: 1.2em"
+            >
+              <p>
+                In TutorSwap, we
+                <strong>Teach to Learn, Learn to Teach</strong>.
+              </p>
+              <br />
+
+              <p>
+                Private tutoring is way too expensive, knowing that we need to
+                pay 25 bucks an hour for a Spanish tutor stopped many of us from
+                learning that new Language, or that instrument, and a lot more.
+              </p>
+              <br />
+
+              <p>
+               Wanna learn Finnish from a REAL person without paying? In TutorSwap, simply teach anyone what you're good at(e.g, piano, coding, even meme-making), earn tokens after every lesson, and use it to learn Finnish from someone else.
+              </p>
+              <br />
+
+              <p>
+                In TutorSwap, not only can you learn skills from others, you
+                can also make a new friend, or improve your own understanding of any topic
+                through teaching (<a
+                  href="https://fs.blog/feynman-technique/"
+                  target="_blank"
+                  >Feynman Technique</a
+                >).
+              </p>
+              <br />
+
+              <p>If you like what you hear, download our app and get your first lesson!</p>
+            </div>
+            <div class="hero-cta-buttons about-page-cta">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.tutorswap.mvp"
+                class="cta-button google-play"
+              >
+                <img
+                  src="https://a.storyblok.com/f/336077/202x60/745c11ec64/play-store-cta.svg"
+                  alt="Get it on Google Play"
+                />
+              </a>
+              <a href="#" class="cta-button app-store">
+                <img
+                  src="https://a.storyblok.com/f/336077/202x60/2b723862ed/app-store-cta.svg"
+                  alt="Download on the App Store"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

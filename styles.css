@@ -27,6 +27,8 @@ body {
   right: 0;
   z-index: 1000;
   padding: 1rem 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
 }
 
 .nav-container {
@@ -34,7 +36,7 @@ body {
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -47,6 +49,62 @@ body {
   font-size: 2.4rem;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .cta-button {
@@ -86,6 +144,13 @@ body {
   justify-content: center;
   padding: 6rem 2rem 2rem;
   margin-top: 8rem;
+}
+.about-app-section {
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 2rem 2rem;
 }
 
 .hero-container {
@@ -145,19 +210,133 @@ body {
   flex-wrap: wrap;
 }
 
+/* About App Page Styles */
+.about-features {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(167, 196, 160, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.feature-icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #5a6c7d;
+  line-height: 1.6;
+}
+
+/* Single Page App Styles */
+.app-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.page {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.page.active {
+  display: block;
+  opacity: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 1rem;
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .navbar {
     padding: 1rem 0;
   }
 
-  .nav-logo h2 {
+  .nav-logo h1 {
     font-size: 2rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    text-align: center;
+    transition: left 0.3s ease;
+    padding: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 1rem 0;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    display: block;
+    padding: 0.5rem;
   }
 
   .cta-button {
@@ -195,6 +374,25 @@ body {
   .hero-cta-buttons .cta-button {
     width: 100%;
   }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .feature-icon i {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -202,8 +400,12 @@ body {
     padding: 0 0.8rem;
   }
 
-  .nav-logo h2 {
-    font-size: 2.2rem;
+  .nav-logo h1 {
+    font-size: 1.8rem;
+  }
+
+  .nav-menu {
+    top: 70px;
   }
 
   .cta-button {
@@ -244,6 +446,32 @@ body {
   .hero-cta-buttons .cta-button {
     width: 100%;
   }
+
+  .feature-grid {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .feature-icon i {
+    font-size: 1.2rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.85rem;
+  }
 }
 
 /* Add body top margin to account for fixed navbar */
@@ -255,4 +483,8 @@ body {
   body {
     margin-top: 90px;
   }
+}
+
+.about-page-cta {
+  margin-top: 3rem;
 }
