@@ -1,0 +1,258 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #a7c4a0;
+  --secondary-color: #4e008e;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Navigation Styles */
+.navbar {
+  background: linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-logo {
+  flex: 0 0 auto;
+}
+
+.nav-logo h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.cta-button {
+  text-decoration: none;
+  padding: 0;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  border: 1px solid transparent;
+  gap: 0.5rem;
+}
+
+.cta-button img {
+  height: 60px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.google-play:hover {
+  transform: translateY(-1px);
+}
+
+.app-store:hover {
+  transform: translateY(-1px);
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fffe 0%, #f0f9f7 100%);
+  padding: 6rem 2rem 2rem;
+}
+
+.hero-container {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.animated-subject {
+  color: var(--primary-color);
+  position: relative;
+  display: inline;
+}
+
+.animated-subject.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-out;
+}
+
+.animated-subject.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease-in;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #6c757d;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #5a6c7d;
+  font-weight: 400;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 1rem;
+    justify-content: center;
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .nav-logo h2 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 250px;
+    padding: 0;
+  }
+
+  .cta-button img {
+    height: 50px;
+  }
+
+  .hero-text {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .hero-cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .hero-cta-buttons .cta-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 0.8rem;
+  }
+
+  .nav-logo h2 {
+    font-size: 2.2rem;
+  }
+
+  .cta-button {
+    font-size: 0.85rem;
+    min-width: 140px;
+  }
+
+  .cta-button img {
+    height: 45px;
+  }
+
+  .hero-text {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .hero-section {
+    padding: 4rem 1rem 1rem;
+  }
+
+  .hero-cta-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .hero-cta-buttons .cta-button {
+    width: 100%;
+  }
+}
+
+/* Add body top margin to account for fixed navbar */
+body {
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-top: 90px;
+  }
+}
