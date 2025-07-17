@@ -1,7 +1,7 @@
 // Text animation for the hero section
 class TextAnimator {
   constructor() {
-    this.subjects = ["Finnish", "Guitar", "Spanish", "Calculus"];
+    this.subjects = ["Finnish", "Guitar", "Spanish", "Cooking"];
     this.currentIndex = 0;
     this.element = document.getElementById("animated-subject");
     this.animationDelay = 2500; // Time between changes in milliseconds
