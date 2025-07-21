@@ -81,7 +81,7 @@ class TextAnimator {
     this.subjects = ["Finnish", "Guitar", "Spanish", "Cooking"];
     this.currentIndex = 0;
     this.element = document.getElementById("animated-subject");
-    this.animationDelay = 2500; // Time between changes in milliseconds
+    this.animationDelay = 1750; // Time between changes in milliseconds
     this.transitionDuration = 300; // CSS transition duration
 
     this.init();
