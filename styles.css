@@ -124,7 +124,7 @@ body {
 }
 
 .cta-button img {
-  height: 60px;
+  height: 45px;
   width: auto;
   border-radius: 6px;
 }
@@ -358,7 +358,7 @@ body {
   }
 
   .cta-button img {
-    height: 50px;
+    height: 40px;
   }
 
   .hero-text {
@@ -376,15 +376,16 @@ body {
   }
 
   .hero-cta-buttons {
-    flex-direction: column;
-    gap: 0.8rem;
+    flex-direction: row;
+    gap: 0.5rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     margin: 0 auto;
   }
 
   .hero-cta-buttons .cta-button {
-    width: 100%;
+    width: auto;
+    flex: 1;
   }
 
   .feature-grid {
@@ -426,7 +427,7 @@ body {
   }
 
   .cta-button img {
-    height: 45px;
+    height: 35px;
   }
 
   .hero-text {
@@ -448,15 +449,16 @@ body {
   }
 
   .hero-cta-buttons {
-    flex-direction: column;
-    gap: 0.8rem;
+    flex-direction: row;
+    gap: 0.5rem;
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     margin: 0 auto;
   }
 
   .hero-cta-buttons .cta-button {
-    width: 100%;
+    width: auto;
+    flex: 1;
   }
 
   .feature-grid {
