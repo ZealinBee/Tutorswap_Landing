@@ -1,4 +1,4 @@
-/* Reset and base styles */
+
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
@@ -124,7 +124,7 @@ body {
 }
 
 .cta-button img {
-  height: 45px;
+  height: 50px;
   width: auto;
   border-radius: 6px;
 }
@@ -423,11 +423,11 @@ body {
 
   .cta-button {
     font-size: 0.85rem;
-    min-width: 140px;
+    min-width: 180px;
   }
 
   .cta-button img {
-    height: 35px;
+    height: 40px;
   }
 
   .hero-text {
@@ -502,3 +502,64 @@ body {
 .about-page-cta {
   margin-top: 3rem;
 }
+
+/* Footer styles */
+.footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 0.7rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #222;
+  padding: 0 1.5rem;
+}
+
+.footer-brand {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.footer-icon {
+  color: #222;
+  font-size: 1.25rem;
+  transition: color 0.2s;
+  opacity: 0.8;
+}
+.footer-icon:hover {
+  opacity: 1;
+}
+
+/* Instagram gradient hover */
+.footer-icon[aria-label="Instagram"]:hover i {
+  background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* LinkedIn blue hover */
+.footer-icon[aria-label="LinkedIn"]:hover i {
+  color: #0077b5;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+/* Reset and base styles */

@@ -172,8 +172,60 @@ class MobileNav {
 }
 
 // Initialize all components when the DOM is loaded
+
 document.addEventListener("DOMContentLoaded", () => {
   new SPARouter();
   new TextAnimator();
   new MobileNav();
+
+  // Email icon click handler for platform-specific behavior
+  const email = "meeting@tutorswap.app";
+  const emailLink = document.getElementById("footer-email");
+  if (emailLink) {
+    function isIOS() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    }
+    function isMac() {
+      return navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+    }
+    function isAndroid() {
+      return /Android/.test(navigator.userAgent);
+    }
+    function isWindows() {
+      return navigator.platform.toUpperCase().indexOf("WIN") >= 0;
+    }
+    emailLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (isIOS() || isMac()) {
+        window.location.href = "mailto:" + email;
+      } else if (isAndroid() || isWindows()) {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(email).then(
+            function () {
+              alert("Email address is copied to your clipboard!");
+            },
+            function () {
+              alert("Failed to copy email address.");
+            }
+          );
+        } else {
+          // Fallback for older browsers
+          const tempInput = document.createElement("input");
+          tempInput.value = email;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          try {
+            document.execCommand("copy");
+            alert("Email address copied to clipboard!");
+          } catch (err) {
+            alert("Failed to copy email address.");
+          }
+          document.body.removeChild(tempInput);
+        }
+      } else {
+        // Default: try mailto
+        window.location.href = "mailto:" + email;
+      }
+    });
+  }
 });
