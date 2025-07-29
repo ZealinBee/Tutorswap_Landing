@@ -78,7 +78,14 @@ class SPARouter {
 // Text animation for the hero section
 class TextAnimator {
   constructor() {
-    this.subjects = ["Finnish", "Guitar", "Spanish", "Cooking"];
+    this.subjects = [
+      "Finnish",
+      "Guitar",
+      "Spanish",
+      "Cooking",
+      "C++",
+      "Knitting",
+    ];
     this.currentIndex = 0;
     this.element = document.getElementById("animated-subject");
     this.animationDelay = 1750; // Time between changes in milliseconds
