@@ -181,6 +181,39 @@ class MobileNav {
 // Initialize all components when the DOM is loaded
 
 document.addEventListener("DOMContentLoaded", () => {
+  // CTA Button Analytics
+  const ctaButtons = [
+    {
+      id: "google-play-main",
+      event: "GooglePlayMainPage",
+    },
+    {
+      id: "app-store-main",
+      event: "AppStoreMainPage",
+    },
+    {
+      id: "google-play-about",
+      event: "GooglePlayAboutPage",
+    },
+    {
+      id: "app-store-about",
+      event: "AppStoreAboutPage",
+    },
+  ];
+
+  ctaButtons.forEach(({ id, event }) => {
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener("click", function () {
+        if (typeof gtag === "function") {
+          gtag("event", event, {
+            event_category: "CTA",
+            event_label: id,
+          });
+        }
+      });
+    }
+  });
   new SPARouter();
   new TextAnimator();
   new MobileNav();
