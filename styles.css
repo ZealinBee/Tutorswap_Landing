@@ -142,7 +142,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 6rem 2rem 2rem;
+  padding: 4.5rem 2rem 2rem;
   margin-top: 4rem;
 }
 .about-app-section {
@@ -564,3 +564,10 @@ body {
   -webkit-text-fill-color: initial;
 }
 /* Reset and base styles */
+
+.community-stats {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #6c757d;
+  font-weight: 500;
+}

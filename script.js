@@ -80,11 +80,11 @@ class TextAnimator {
   constructor() {
     this.subjects = [
       "Finnish",
-      "Guitar",
-      "Spanish",
-      "Cooking",
-      "C++",
-      "Knitting",
+      "A.I.",
+      "German",
+      "Piano",
+      "Table Tennis",
+      "Crocheting",
     ];
     this.currentIndex = 0;
     this.element = document.getElementById("animated-subject");
